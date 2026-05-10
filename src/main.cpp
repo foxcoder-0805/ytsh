@@ -9,8 +9,11 @@ int main(int argc, char* argv[]) {
         if(string(argv[1]) != "-m") {
             string search = "https://www.youtube.com/results?search_query=";
 
-            search.append(argv[1]);
-    
+            for(int i = 1; i < argc; ++i) {
+                if(i > 1) search.push_back('+');
+                search.append(argv[i]);
+            }
+
             string bl = "xdg-open ";
             bl.append(search);
 
@@ -20,9 +23,14 @@ int main(int argc, char* argv[]) {
                 system("xdg-open https://music.youtube.com");
             } else {
                 string search = "https://music.youtube.com/search?q=";
-                search.append(argv[2]);
 
-                string bl = "xdg-open ";bl.append(search);
+                for(int i = 2; i < argc; ++i) {
+                    if(i > 2) search.push_back('+');
+                    search.append(argv[i]);
+                }
+
+                string bl = "xdg-open ";
+                bl.append(search);
 
                 system(bl.c_str());
             }
