@@ -11,8 +11,8 @@ int main(int argc, char* argv[]) {
         if(string(argv[1]) != "-m") {
             string search = "https://www.youtube.com/results?search_query=";
 
-            for(int i = 1; i < argc; ++i) {
-                if(i > 1) search.push_back('+');
+            for (int i = 1; i < argc; ++i) {
+                if (i > 1) search.push_back('+');
                 search.append(argv[i]);
             }
 
