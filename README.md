@@ -1,4 +1,4 @@
 ytsh / youtube-search-helper on c++
 
-falgs:
+flags:
 -m youtube music
